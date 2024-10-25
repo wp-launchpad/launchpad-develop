@@ -1,0 +1,23 @@
+{
+  "name": "wp-launchpad/framework-options",
+  "description": "Options library for the framework Launchpad",
+  "autoload": {
+    "psr-4": {
+      "LaunchpadFrameworkOptions\\": "inc/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaunchpadFrameworkOptions\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=7.0",
+    "wp-launchpad/options": "^0.1",
+    "wp-launchpad/core": "^0.3"
+  },
+  "require-dev": {
+    "wp-media/phpunit": "^3.0",
+    "wp-launchpad/phpunit-wp-hooks": "^1.0"
+  }
+}
