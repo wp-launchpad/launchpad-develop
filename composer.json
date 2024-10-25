@@ -1,0 +1,16 @@
+{
+    "name": "wp-launchpad/launchpad-develop",
+    "require-dev": {
+        "soyuka/pmu": "^0.0.15"
+    },
+    "extra": {
+        "pmu": {
+            "projects": ["./packages/*/composer.json"]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "soyuka/pmu": true
+        }
+    }
+}
