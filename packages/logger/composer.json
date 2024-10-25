@@ -1,0 +1,27 @@
+{
+  "name": "wp-launchpad/logger",
+  "description": "Logger from Launchpad",
+  "keywords": [
+    "wordpress"
+  ],
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "CrochetFeve0251"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "LaunchpadLogger\\": "inc/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaunchpadLogger\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "wp-launchpad/core": "0.3.*",
+    "monolog/monolog": "^1.0 || ^2.0"
+  }
+}

@@ -1,0 +1,31 @@
+
+{
+  "name": "wp-launchpad/action-scheduler",
+  "description": "Action Scheduler library for Launchpad framework",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "type": "library",
+  "authors": [
+    {
+      "name": "coquardcyr",
+      "email": "coquardcyr@gmail.com"
+    }
+  ],
+  "require": {
+    "woocommerce/action-scheduler": "^3.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.5 || ^8 || ^9",
+    "wp-media/phpunit": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "LaunchpadActionScheduler\\": "inc/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaunchpadActionScheduler\\Tests\\": "tests/"
+    }
+  }
+}

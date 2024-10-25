@@ -1,0 +1,24 @@
+{
+  "name": "wp-launchpad/framework-constants",
+  "description": "Constants library for Launchpad framework",
+  "keywords": [
+    "wordpress"
+  ],
+  "autoload": {
+    "psr-4": {
+      "LaunchpadFrameworkConstants\\": "inc/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaunchpadFrameworkConstants\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "wp-launchpad/constants": "^0.0",
+    "wp-launchpad/core": "^0.3"
+  },
+  "require-dev": {
+    "wp-media/phpunit": "^3.0"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "wp-launchpad/constants",
+  "description": "Constants from Launchpad",
+  "keywords": [
+    "wordpress"
+  ],
+  "autoload": {
+    "psr-4": {
+      "LaunchpadConstants\\": "inc/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaunchpadConstants\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "wp-launchpad/dispatcher": "^1.0"
+  },
+  "require-dev": {
+    "wp-media/phpunit": "^3.0"
+  }
+}
