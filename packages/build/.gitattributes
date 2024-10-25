@@ -1,0 +1,6 @@
+.gitattributes export-ignore
+tests export-ignore
+
+composer.lock export-ignore
+LICENSE export-ignore
+README.MD export-ignore
