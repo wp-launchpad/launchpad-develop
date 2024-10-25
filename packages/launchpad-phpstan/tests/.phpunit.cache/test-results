@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Warning":6,"Launchpad\\PHPStan\\Tests\\src\\PerformanceRuleTest::testRule":3,"Launchpad\\PHPStan\\Tests\\src\\PerformanceRuleTest::testPrefixedRule":3},"times":{"Warning":0.002,"Launchpad\\PHPStan\\Tests\\src\\PerformanceRuleTest::testRule":0.851,"Launchpad\\PHPStan\\Tests\\src\\PerformanceRuleTest::testPrefixedRule":0.911}}
