@@ -1,5 +1,0 @@
-root: ./wiki/
-
-structure:
-    readme: index.md
-    summary: summary.md
