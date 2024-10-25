@@ -1,7 +1,6 @@
 {
   "name": "wp-launchpad/front",
   "description": "Front library for Launchpad framework",
-  "minimum-stability": "stable",
   "license": "proprietary",
   "type": "library",
   "authors": [
@@ -11,13 +10,13 @@
     }
   ],
   "require": {
-    "wp-launchpad/bud-assets": "^0.0",
-    "wp-launchpad/core": "^0.2"
+    "wp-launchpad/bud-assets": "^0.1",
+    "wp-launchpad/core": "^0.3"
   },
   "require-dev": {
     "phpunit/phpunit": "^7.5 || ^8 || ^9",
     "wp-media/phpunit": "^3.0",
-    "wp-launchpad/cli": "^v1.0"
+    "wp-launchpad/cli": "^v1.1"
   },
   "autoload": {
     "psr-4": {
@@ -27,11 +26,6 @@
   "autoload-dev": {
     "psr-4": {
       "LaunchpadFront\\Tests\\": "tests/"
-    }
-  },
-  "config": {
-    "allow-plugins": {
-      "composer/installers": true
     }
   }
 }
