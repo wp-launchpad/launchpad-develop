@@ -64,15 +64,15 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
           restore-keys: ${{ runner.os }}-composer-
 
-      - name: Require phpcov for coverage reporting
-        run: composer require --dev --no-scripts phpunit/phpcov -W
-
       - name: Run ${{ matrix.component }} install
         run: |
           composer global require soyuka/pmu
           composer global config allow-plugins.soyuka/pmu true --no-interaction
           composer global link . --permanent
           composer ${{matrix.component}} update
+
+      - name: Require phpcov for coverage reporting
+        run: composer ${{matrix.component}} require --dev --no-scripts phpunit/phpcov -W
 
       - name: Install ${{ matrix.component }} tests
         run: bash bin/install-wp-tests.sh wordpress_test root root 127.0.0.1:3306 ${{ matrix.wp-versions }}
