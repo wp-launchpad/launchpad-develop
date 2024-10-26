@@ -68,6 +68,7 @@ jobs:
         run: |
           composer global require soyuka/pmu
           composer global config allow-plugins.soyuka/pmu true --no-interaction
+          composer ${{matrix.component}} config allow-plugins.composer/installers false --no-interaction
           composer global link . --permanent
           composer ${{matrix.component}} update
 
