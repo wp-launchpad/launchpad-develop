@@ -1,5 +1,6 @@
 {
   "name": "wp-launchpad/uninstaller",
+  "minimum-stability": "dev",
   "description": "Uninstaller from Launchpad framework",
   "keywords": [
     "wordpress"
@@ -21,7 +22,7 @@
     }
   },
   "require": {
-    "wp-launchpad/core": "^0.3"
+    "wp-launchpad/core": "^0.3 || @dev"
   },
   "require-dev": {
     "wp-media/phpunit": "^3.0"

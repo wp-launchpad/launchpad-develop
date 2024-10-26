@@ -1,5 +1,6 @@
 {
   "name": "wp-launchpad/logger",
+  "minimum-stability": "dev",
   "description": "Logger from Launchpad",
   "keywords": [
     "wordpress"
@@ -21,7 +22,7 @@
     }
   },
   "require": {
-    "wp-launchpad/core": "0.3.*",
+    "wp-launchpad/core": "^0.3 || @dev",
     "monolog/monolog": "^1.0 || ^2.0"
   }
 }

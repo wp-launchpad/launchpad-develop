@@ -1,7 +1,6 @@
 {
   "name": "wp-launchpad/http-client",
   "description": "description",
-  "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {

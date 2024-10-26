@@ -1,7 +1,6 @@
 {
   "name": "wp-launchpad/build",
   "description": "Build library for the Launchpad framework",
-  "minimum-stability": "stable",
   "license": "proprietary",
   "type": "library",
   "authors": [
@@ -11,7 +10,7 @@
     }
   ],
   "require": {
-    "wp-launchpad/cli": "^1.1",
+    "wp-launchpad/cli": "^1.1 || @dev",
     "ext-mbstring": "*",
     "ext-json": "*",
     "composer/composer": "^2.5",

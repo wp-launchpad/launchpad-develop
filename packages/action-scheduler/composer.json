@@ -2,7 +2,6 @@
 {
   "name": "wp-launchpad/action-scheduler",
   "description": "Action Scheduler library for Launchpad framework",
-  "minimum-stability": "stable",
   "license": "proprietary",
   "type": "library",
   "authors": [

@@ -1,5 +1,6 @@
 {
   "name": "wp-launchpad/framework-constants",
+  "minimum-stability": "dev",
   "description": "Constants library for Launchpad framework",
   "keywords": [
     "wordpress"
@@ -15,8 +16,8 @@
     }
   },
   "require": {
-    "wp-launchpad/constants": "^0.0",
-    "wp-launchpad/core": "^0.3"
+    "wp-launchpad/constants": "^0.0 || @dev",
+    "wp-launchpad/core": "^0.3 || @dev"
   },
   "require-dev": {
     "wp-media/phpunit": "^3.0"

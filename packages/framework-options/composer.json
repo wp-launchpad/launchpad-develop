@@ -1,5 +1,6 @@
 {
   "name": "wp-launchpad/framework-options",
+  "minimum-stability": "dev",
   "description": "Options library for the framework Launchpad",
   "autoload": {
     "psr-4": {
@@ -13,11 +14,11 @@
   },
   "require": {
     "php": ">=7.0",
-    "wp-launchpad/options": "^0.1",
-    "wp-launchpad/core": "^0.3"
+    "wp-launchpad/options": "^0.1 || @dev",
+    "wp-launchpad/core": "^0.3 || @dev"
   },
   "require-dev": {
     "wp-media/phpunit": "^3.0",
-    "wp-launchpad/phpunit-wp-hooks": "^1.0"
+    "wp-launchpad/phpunit-wp-hooks": "^1.0 || @dev"
   }
 }

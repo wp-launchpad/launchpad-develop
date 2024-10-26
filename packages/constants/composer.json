@@ -15,7 +15,7 @@
     }
   },
   "require": {
-    "wp-launchpad/dispatcher": "^1.0"
+    "wp-launchpad/dispatcher": "^1.0 || @dev"
   },
   "require-dev": {
     "wp-media/phpunit": "^3.0"
