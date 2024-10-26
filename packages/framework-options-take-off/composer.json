@@ -1,0 +1,17 @@
+{
+  "name": "wp-launchpad/framework-options-take-off",
+  "description": "Options library take off for the framework Launchpad",
+  "require": {
+    "wp-launchpad/framework-options": "^0.3"
+  },
+  "extra": {
+    "launchpad": {
+      "clean": true,
+      "install": true,
+      "library_provider": "LaunchpadFrameworkOptions\\ServiceProvider",
+      "libraries" : {
+        "wp-launchpad/framework-options": "^0.3"
+      }
+    }
+  }
+}

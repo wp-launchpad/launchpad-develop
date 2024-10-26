@@ -1,0 +1,41 @@
+{
+  "name": "wp-launchpad/berlindb",
+  "description": "BerlinDB library for Launchpad framework",
+  "minimum-stability": "stable",
+  "type": "library",
+  "authors": [
+    {
+      "name": "coquardcyr",
+      "email": "coquardcyr@gmail.com"
+    }
+  ],
+  "require": {
+    "wp-launchpad/cli": "^1.0.1",
+    "berlindb/core": "^2.0",
+    "composer/composer": "^2.5"
+  },
+  "require-dev": {
+    "brain/monkey": "^2.0",
+    "phpunit/phpunit": "^7.5 || ^8 || ^9",
+    "wp-media/phpunit": "^3.0",
+    "mikey179/vfsstream": "^1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "LaunchpadBerlinDB\\": "inc/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaunchpadBerlinDB\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "launchpad": {
+      "provider" : "LaunchpadBerlinDB\\ServiceProvider",
+      "libraries": {
+        "berlindb/core": "^2.0"
+      }
+    }
+  }
+}

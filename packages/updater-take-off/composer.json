@@ -1,0 +1,26 @@
+{
+  "name": "wp-launchpad/updater-take-off",
+  "description": "Initialisation library for updater from Launchpad framework",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "type": "library",
+  "authors": [
+    {
+      "name": "coquardcyr",
+      "email": "coquardcyr@gmail.com"
+    }
+  ],
+  "require-dev": {
+    "wp-launchpad/updater": "^0.3"
+  },
+  "extra": {
+    "launchpad": {
+      "provider" : "LaunchpadUpdater\\ServiceProvider",
+      "install": true,
+      "clean": true,
+      "libraries": {
+        "wp-launchpad/updater": "^0.3"
+      }
+    }
+  }
+}

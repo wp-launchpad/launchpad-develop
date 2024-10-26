@@ -1,0 +1,24 @@
+{
+  "name": "wp-launchpad/http-client-take-off",
+  "description": "HTTP Client installator library for Launchpad framework",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "type": "library",
+  "authors": [
+    {
+      "name": "coquardcyr",
+      "email": "coquardcyr@gmail.com"
+    }
+  ],
+  "require": {
+    "wp-launchpad/http-client": "^0.0.1"
+  },
+  "extra": {
+    "launchpad": {
+      "libraries": {
+        "wp-launchpad/http-client": "^0.0.1"
+      },
+      "clean": true
+    }
+  }
+}
