@@ -1,7 +1,7 @@
 {
   "name": "wp-launchpad/updater-take-off",
   "description": "Initialisation library for updater from Launchpad framework",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "license": "proprietary",
   "type": "library",
   "authors": [

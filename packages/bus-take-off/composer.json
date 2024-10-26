@@ -1,5 +1,6 @@
 {
   "name": "wp-launchpad/bus-take-off",
+  "minimum-stability": "dev",
   "description": "Initialisation library for the bus library from the Launchpad framework",
   "require": {
     "wp-launchpad/cli": "^1.0.1",

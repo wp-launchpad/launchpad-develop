@@ -1,5 +1,6 @@
 {
   "name": "wp-launchpad/framework-options-take-off",
+  "minimum-stability": "dev",
   "description": "Options library take off for the framework Launchpad",
   "require": {
     "wp-launchpad/framework-options": "^0.3"
