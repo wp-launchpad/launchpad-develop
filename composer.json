@@ -1,0 +1,25 @@
+{
+    "name": "wp-launchpad/launchpad-develop",
+    "minimum-stability": "dev",
+    "require": {
+        "wp-launchpad/launchpad": "@dev",
+        "wp-launchpad/logger": "@dev",
+        "wp-launchpad/renderer": "@dev",
+        "wp-launchpad/bus": "@dev",
+        "wp-launchpad/options": "@dev",
+        "wp-launchpad/uninstaller": "@dev"
+    },
+    "require-dev": {
+        "soyuka/pmu": "^0.0.15"
+    },
+    "extra": {
+        "pmu": {
+            "projects": ["./packages/*/composer.json"]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "soyuka/pmu": true
+        }
+    }
+}

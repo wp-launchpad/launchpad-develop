@@ -1,0 +1,34 @@
+{
+    "name": "wp-launchpad/take-off",
+    "description": "Initialisation library for Launchpad",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "type": "library",
+    "authors": [
+        {
+            "name": "coquardcyr",
+            "email": "coquardcyr@gmail.com"
+        }
+    ],
+    "require": {
+        "wp-launchpad/cli": "^1.0.1 || @dev",
+        "ext-mbstring": "*",
+        "ext-json": "*",
+        "composer/composer": "^2.5",
+        "brianhenryie/strauss": "^0.14.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5 || ^8 || ^9",
+        "wp-media/phpunit": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaunchpadTakeOff\\": "inc/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaunchpadTakeOff\\Tests\\": "tests/"
+        }
+    }
+}

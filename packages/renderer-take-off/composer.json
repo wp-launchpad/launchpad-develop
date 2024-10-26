@@ -1,0 +1,34 @@
+{
+  "name": "wp-launchpad/renderer-take-off",
+  "minimum-stability": "dev",
+  "description": "Initialisation library for the renderer library from the Launchpad framework",
+  "require": {
+    "wp-launchpad/cli": "^1.0.1",
+    "wp-launchpad/renderer": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "LaunchpadRendererTakeOff\\": "inc/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.5 || ^8 || ^9",
+    "wp-media/phpunit": "^3.0"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaunchpadRendererTakeOff\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "launchpad": {
+      "provider" : "LaunchpadRendererTakeOff\\ServiceProvider",
+      "command": "renderer:install",
+      "install": true,
+      "clean": true,
+      "libraries": {
+        "wp-launchpad/renderer": "^1.3"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "wp-launchpad/framework-constants-take-off",
+  "description": "Constants library take off for the framework Launchpad",
+  "extra": {
+    "launchpad": {
+      "library_provider" : "LaunchpadFrameworkConstants\\ServiceProvider",
+      "clean": true,
+      "install": true,
+      "libraries" : {
+        "wp-launchpad/framework-constants": "^0.1"
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "wp-launchpad/http-client",
+  "description": "description",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "cyrille",
+      "email": "coquardcyr@gmail.com"
+    }
+  ],
+  "require": {
+    "psr/http-client": "^1.0",
+    "httpsoft/http-message": "^1.0"
+  },
+  "require-dev": {
+    "brain/monkey": "^2.0",
+    "phpunit/phpunit": "^7.5 || ^8 || ^9",
+    "wp-media/phpunit": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "LaunchpadHTTPClient\\": "inc/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaunchpadHTTPClient\\Tests\\": "tests/"
+    }
+  }
+}

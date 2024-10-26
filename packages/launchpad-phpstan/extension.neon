@@ -1,0 +1,28 @@
+rules:
+    - Launchpad\PHPStan\PerformanceRule
+    - Launchpad\PHPStan\Hook\BaseHookAPIRule
+    - Launchpad\PHPStan\Hook\SyntaxRule
+    - Launchpad\PHPStan\Hook\HeavyInitRule
+    - Launchpad\PHPStan\Transients\BaseAPIRule
+    - Launchpad\PHPStan\Options\BaseAPIRule
+    - Launchpad\PHPStan\Container\InflectorRule
+    - Launchpad\PHPStan\Exception\NoExceptionRule
+    - Launchpad\PHPStan\Architecture\SingletonRule
+    - Launchpad\PHPStan\Architecture\StaticRule
+services:
+	-
+		class: Launchpad\PHPStan\Container\InflectorRule
+		arguments:
+			- @reflectionProvider
+	-
+		class: Launchpad\PHPStan\Hook\HeavyInitRule
+		arguments:
+			- @reflectionProvider
+	-
+		class: Launchpad\PHPStan\Exception\NoExceptionRule
+		arguments:
+			- @reflectionProvider
+	-
+		class: Launchpad\PHPStan\Architecture\SingletonRule
+		arguments:
+			- @reflectionProvider
