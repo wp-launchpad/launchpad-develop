@@ -36,6 +36,7 @@ jobs:
           - wp-launchpad/http-client
           - wp-launchpad/launchpad-phpstan
           - wp-launchpad/logger-take-off
+          - wp-launchpad/phpunit-wp-hooks
 
     name: ${{ matrix.component }} WP ${{ matrix.wp-versions }} with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}.
 
