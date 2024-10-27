@@ -33,6 +33,7 @@ jobs:
           - wp-launchpad/bus-take-off
           - wp-launchpad/framework-constants
           - wp-launchpad/framework-options
+          - wp-launchpad/http-client
 
     name: ${{ matrix.component }} WP ${{ matrix.wp-versions }} with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}.
 
