@@ -26,6 +26,7 @@ jobs:
           - wp-launchpad/dispatcher
           - wp-launchpad/uninstaller
           - wp-launchpad/updater
+          - wp-launchpad/cli
 
     name: ${{ matrix.component }} WP ${{ matrix.wp-versions }} with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}.
 
