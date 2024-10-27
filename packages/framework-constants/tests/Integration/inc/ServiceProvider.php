@@ -25,7 +25,7 @@ class ServiceProvider extends TestCase
 
         $prefix = 'prefix_';
 
-        $plugin = new Plugin($container, $event_manager, new SubscriberWrapper($prefix), $dispatcher);
+        $plugin = new Plugin($container, $event_manager, new SubscriberWrapper($prefix, $container), $dispatcher);
 
         $plugin->load([
             'prefix' => $prefix,

@@ -21,5 +21,11 @@
   },
   "require-dev": {
     "wp-media/phpunit": "^3.0"
+  },
+  "scripts": {
+    "test-integration": "\"vendor/bin/phpunit\" --testsuite integration --colors=always --configuration tests/Integration/phpunit.xml.dist --exclude-group AdminOnly",
+    "run-tests": [
+      "@test-integration"
+    ]
   }
 }
