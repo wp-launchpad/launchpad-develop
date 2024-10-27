@@ -1,6 +1,7 @@
 <?php
 namespace Launchpad\Tests\Integration;
 use LaunchpadBus\ServiceProvider;
+use LaunchpadDispatcher\Dispatcher;
 use WPMedia\PHPUnit\BootstrapManager;
 
 define( 'LAUNCHPAD_PLUGIN_ROOT', dirname( dirname( __DIR__ ) ) . DIRECTORY_SEPARATOR );
@@ -22,9 +23,12 @@ tests_add_filter(
             // TODO: add your logic from .
         }
 
-        $plugin = new Plugin(new Container(), new EventManager(), new SubscriberWrapper('test'));
+		$container = new Container();
+		$prefix = 'test';
+
+        $plugin = new Plugin($container, new EventManager(), new SubscriberWrapper($prefix, $container), new Dispatcher());
         $plugin->load([
-            'prefix' => 'test',
+            'prefix' => $prefix,
             'version' => '3.16'
         ], [
             ServiceProvider::class,

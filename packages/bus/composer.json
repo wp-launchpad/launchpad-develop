@@ -32,5 +32,11 @@
     "psr-4": {
       "LaunchpadBus\\Tests\\": "tests/"
     }
+  },
+  "scripts": {
+    "test-integration": "\"vendor/bin/phpunit\" --testsuite integration --colors=always --configuration tests/Integration/phpunit.xml.dist",
+    "run-tests": [
+      "@test-integration"
+    ]
   }
 }

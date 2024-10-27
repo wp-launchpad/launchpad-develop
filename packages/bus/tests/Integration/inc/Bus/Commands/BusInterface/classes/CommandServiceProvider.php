@@ -8,18 +8,10 @@ use LaunchpadCore\Container\AbstractServiceProvider;
 
 class CommandServiceProvider extends AbstractServiceProvider
 {
-
-    protected $provides = [
-        Command::class,
-    ];
-
     protected function define()
     {
-    }
-
-
-    public function register()
-    {
-        $this->getLeagueContainer()->share(Command::class, CommandHandler::class);
-    }
+		$this->register_service(Command::class)
+			 ->set_concrete(CommandHandler::class)
+			 ->share();
+	}
 }

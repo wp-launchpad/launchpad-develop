@@ -29,6 +29,7 @@ jobs:
           - wp-launchpad/cli
           - wp-launchpad/bud-assets
           - wp-launchpad/berlindb
+          - wp-launchpad/bus
 
     name: ${{ matrix.component }} WP ${{ matrix.wp-versions }} with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}.
 
