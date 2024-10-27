@@ -16,5 +16,11 @@
     "psr-4": {
       "Launchpad\\PHPStan\\Tests\\": "tests/"
     }
+  },
+  "scripts": {
+    "test-unit": "\"vendor/bin/phpunit\" --colors=always --configuration tests/phpunit.xml",
+    "run-tests": [
+      "@test-unit"
+    ]
   }
 }
