@@ -32,6 +32,7 @@ jobs:
           - wp-launchpad/bus
           - wp-launchpad/bus-take-off
           - wp-launchpad/framework-constants
+          - wp-launchpad/framework-options
 
     name: ${{ matrix.component }} WP ${{ matrix.wp-versions }} with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}.
 

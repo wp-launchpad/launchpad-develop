@@ -57,8 +57,7 @@ class Set implements SetInterface {
 		 *
 		 * @param mixed $default The default value.
 		 */
-		$value = apply_filters( "pre_get_{$this->slug}" . $name, null, $default ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
-
+		$value = apply_filters( "pre_get_{$this->slug}_" . $name, null, $default ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		if ( null !== $value ) {
 			return $value;
 		}
