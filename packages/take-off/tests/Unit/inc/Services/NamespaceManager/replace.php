@@ -29,18 +29,24 @@ class Test_Replace extends TestCase
      * @dataProvider configTestData
      */
     public function testTestDoAsExpected($config, $expected) {
-           $this->old_config->expects()->get_namespace()->andReturn($config['old_namespace']);
-           $this->old_config->expects()->get_test_namespace()->andReturn($config['old_test_namespace']);
+           $this->old_config->shouldReceive('get_namespace')->andReturn($config['old_namespace'])->atLeast()->once();
+           $this->old_config->shouldReceive('get_test_namespace')->andReturn($config['old_test_namespace'])->atLeast()->once();
            $this->old_config->expects()->get_code_folder()->andReturn($config['old_code_folder']);
            $this->old_config->expects()->get_test_folder()->andReturn($config['old_test_folder']);
-           $this->new_config->expects()->get_namespace()->andReturn($config['new_namespace']);
-           $this->new_config->expects()->get_test_namespace()->andReturn($config['new_test_namespace']);
+           $this->old_config->expects()->get_wordpress_key()->andReturn($config['old_wordpress_key']);
+           $this->new_config->expects()->get_wordpress_key()->andReturn($config['new_wordpress_key']);
+           $this->new_config->shouldReceive('get_namespace')->andReturn($config['new_namespace'])->atLeast()->once();
+           $this->new_config->shouldReceive('get_test_namespace')->andReturn($config['new_test_namespace'])->atLeast()->once();
 
-           $this->filesystem->expects()->listContents($expected['old_code_folder_path'], true)->andReturn($config['files'])->twice();
-           $this->filesystem->expects()->listContents($expected['old_test_folder_path'], true)->andReturn($config['files']);
+           $this->filesystem->shouldReceive('listContents')->with($expected['old_code_folder_path'], true)->andReturn($config['files'])->atLeast()->times(1);
+           $this->filesystem->shouldReceive('listContents')->with($expected['old_test_folder_path'], true)->andReturn($config['files']);
 
            foreach ($expected['files'] as $file) {
-               $this->filesystem->expects()->read($file['path'])->andReturn($config['files_content'][$file['path']]);
+               $this->filesystem->expects()->has($file['path'])->andReturn($file['has']);
+               if(! $file['has']) {
+				   continue;
+			   }
+			   $this->filesystem->expects()->read($file['path'])->andReturn($config['files_content'][$file['path']]);
                $this->filesystem->expects()->update($file['path'], $file['content']);
            }
 
