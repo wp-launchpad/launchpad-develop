@@ -34,6 +34,8 @@ jobs:
           - wp-launchpad/framework-constants
           - wp-launchpad/framework-options
           - wp-launchpad/http-client
+          - wp-launchpad/launchpad-phpstan
+          - wp-launchpad/logger-take-off
 
     name: ${{ matrix.component }} WP ${{ matrix.wp-versions }} with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}.
 
