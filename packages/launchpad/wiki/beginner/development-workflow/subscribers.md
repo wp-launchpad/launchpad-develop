@@ -143,6 +143,70 @@ public function add_sitemap_rule() {
 }
 ```
 
+### Summary
+
+In this part, we will summarize how to create a subscriber.
+
+We will first have
+to create a regular class inside the [`inc` folder](https://github.com/wp-launchpad/launchpad-examples/tree/main/base/inc) from the project:
+
+```php
+class MyClass {
+
+}
+```
+
+Once this is done, we will create one or multiple callback methods:
+```php
+class MyClass {
+    /**
+    * @hook init 2
+     */
+    public function add_sitemap_rule() {
+        add_rewrite_rule('sitemap\.xml', 'index.php?sitemap=index', 'top');
+    }
+    
+    /**
+    * @hook home_url
+     */
+    public function change_sitemap_url($url, $path) {
+        if( '/wp-sitemap.xml' !== $path) {
+           return $url;
+        }
+        
+        return str_replace($path, 'sitemap.xml', $url);
+    }
+}
+```
+
+**Note:** It is also possible to add methods on the subscriber which are not callback from an event.
+
+```php
+class MyClass {
+    /**
+    * @hook init 2
+     */
+    public function add_sitemap_rule() {
+        add_rewrite_rule('sitemap\.xml', 'index.php?sitemap=index', 'top');
+    }
+    
+    /**
+    * @hook home_url
+     */
+    public function change_sitemap_url($url, $path) {
+        if( '/wp-sitemap.xml' !== $path) {
+           return $url;
+        }
+        
+        return str_replace($path, 'sitemap.xml', $url);
+    }
+    
+    public function my_method() {
+    
+    }
+}
+```
+
 ## Subscriber types
 
 Once a subscriber is created, it needs now to be detected by the framework.
