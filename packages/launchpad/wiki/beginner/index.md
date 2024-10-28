@@ -204,7 +204,7 @@ class MyClass {
 }
 ```
 
-To know more about subscribers, it is possible to check this documentation.
+To know more about subscribers, it is possible to check [this documentation](./development-workflow/subscribers.md).
 
 ### Providers
 
