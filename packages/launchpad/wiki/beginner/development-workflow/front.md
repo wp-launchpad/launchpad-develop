@@ -98,4 +98,15 @@ Once it finished executing a new folder `assets` should have appeared inside you
 
 #### Editing resources
 
-### Enqueuing assets
+### Enqueueing assets
+
+While having the assets built is one thing, having WordPress loading these assets is another.
+
+To achieve this we would have to take advantage of the WordPress enqueue API and the helper given inside Launchpad front-end module to make it easier.
+
+#### Understanding the assets folder
+
+
+
+#### Enqueueing using Launchpad
+
