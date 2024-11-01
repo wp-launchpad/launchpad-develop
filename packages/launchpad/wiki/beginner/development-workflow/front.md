@@ -74,4 +74,28 @@ Once this is done then the command `bin/generator front:install` should have dis
 
 ### Working with assets
 
+All front-end resources required for developing are present within `_dev` folder for one simple reason: it is easier to remove these assets when [building the production version](./build.md) from the plugin.
+
+Assets inside that folder are organised around a Node.js project using [Bud.js](https://bud.js.org/) to build assets.
+
+The reason behind this choice is due to the fact Bud.js is thought for WordPress and its constraints and due to that it is hard to find a better fit.
+
+#### Installing dependencies
+
+As any Node.js project working with Launchpad front-end assets project requires to install its dependencies.
+
+To do so make sure you are inside the `_dev` folder from your Launchpad project and execute the following command: `npm i`.
+
+Once this command executed you should have a new folder `node_modules` inside the Launchpad front-end assets project.
+
+#### Building assets
+
+In the same fashion as Launchpad project, development resources are not intended to be directly used on production and so it is mandatory to pass by a building step before being able to have the real assets that will be used in the plugin.
+
+For that it is possible to run the command `npm run build` inside the `_dev` folder.
+
+Once it finished executing a new folder `assets` should have appeared inside your Launchpad project.
+
+#### Editing resources
+
 ### Enqueuing assets
