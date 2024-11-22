@@ -1,4 +1,4 @@
-# Launchpad development environnment
+# Launchpad development environment
 
 ## Install
 1. Install the dependencies from the main composer project using `composer i`
