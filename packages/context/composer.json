@@ -1,0 +1,35 @@
+{
+  "name": "wp-launchpad/context",
+  "description": "Context module for Launchpad",
+  "keywords": [
+    "wordpress"
+  ],
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "CrochetFeve0251"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "LaunchpadContext\\": "inc/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaunchpadContext\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "wp-launchpad/core": "^0.3.2"
+  },
+  "require-dev": {
+    "wp-media/phpunit": "^3.0"
+  },
+  "scripts": {
+    "test-integration": "\"vendor/bin/phpunit\" --testsuite integration --colors=always --configuration tests/Integration/phpunit.xml.dist --exclude-group AdminOnly",
+    "run-tests": [
+      "@test-integration"
+    ]
+  }
+}
