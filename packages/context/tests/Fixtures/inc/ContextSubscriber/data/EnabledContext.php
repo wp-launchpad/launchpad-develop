@@ -2,8 +2,8 @@
 
 namespace LaunchpadContext\Tests\Fixtures\inc\ContextSubscriber\data;
 
-class Context {
+class EnabledContext {
 	public function __invoke(...$values) {
-		return false;
+		return true;
 	}
 }

@@ -2,9 +2,9 @@
 
 namespace LaunchpadContext\Tests\Fixtures\inc\ContextSubscriber\data;
 
-class Subscriber {
+class EnabledSubscriber {
 	/**
-	 * @context \LaunchpadContext\Tests\Fixtures\inc\ContextSubscriber\data\Context
+	 * @context \LaunchpadContext\Tests\Fixtures\inc\ContextSubscriber\data\EnabledContext
 	 *
 	 * @hook test
 	 */

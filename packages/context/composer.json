@@ -1,6 +1,7 @@
 {
   "name": "wp-launchpad/context",
   "description": "Context module for Launchpad",
+  "minimum-stability": "dev",
   "keywords": [
     "wordpress"
   ],
@@ -21,7 +22,7 @@
     }
   },
   "require": {
-    "wp-launchpad/core": "^0.3.2"
+    "wp-launchpad/core": "^0.3 || @dev"
   },
   "require-dev": {
     "wp-media/phpunit": "^3.0"

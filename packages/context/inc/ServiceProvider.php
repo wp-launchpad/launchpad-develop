@@ -10,6 +10,6 @@ class ServiceProvider extends AbstractServiceProvider {
 	 * @inheritDoc
 	 */
 	protected function define() {
-		// TODO: Implement define() method.
+		$this->register_init_subscriber(ContextSubscriber::class);
 	}
 }
