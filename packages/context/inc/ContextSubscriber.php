@@ -4,25 +4,40 @@ namespace LaunchpadContext;
 
 use League\Container\ContainerAwareInterface;
 use League\Container\ContainerAwareTrait;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 use ReflectionClass;
 
 class ContextSubscriber implements ContainerAwareInterface {
 
 	use ContainerAwareTrait;
 
+    /**
+     * Mapping from the context to their methods.
+     *
+     * @var array
+     */
 	protected $context_mapper;
 
 	/**
-	 * @param $context_mapper
+	 * Instantiate the class.
 	 */
 	public function __construct() {
 		$this->context_mapper = [];
 	}
 
 
-	/**
-	 * @hook $prefixcore_subscriber_disable_callback
-	 */
+    /**
+     * Triggers the context to disable a method.
+     *
+     * @hook $prefixcore_subscriber_disable_callback
+     *
+     * @param boolean $activated Is the method activated.
+     * @param string $classname Name from the class from the method.
+     * @param string $method Name from the method.
+     *
+     * @return mixed
+     */
 	public function trigger_context($activated, $classname, $method) {
 
 		if(! key_exists("$classname::$method", $this->context_mapper)) {
@@ -40,7 +55,16 @@ class ContextSubscriber implements ContainerAwareInterface {
 		return $context($classname, $method);
 	}
 
-	protected function load(string $classname, string $method) {
+    /**
+     * Load the context from the method.
+     *
+     * @param string $classname Classname from the method.
+     * @param string $method Name from the method.
+     * @return string
+     *
+     * @throws \ReflectionException
+     */
+	protected function load(string $classname, string $method): string {
 
 		$reflection_class = new ReflectionClass( $classname );
 		$docblock         = $reflection_class->getDocComment() ? $reflection_class->getDocComment() : '';
