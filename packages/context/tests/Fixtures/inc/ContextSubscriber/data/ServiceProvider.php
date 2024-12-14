@@ -13,6 +13,8 @@ class ServiceProvider extends AbstractServiceProvider {
 
 		$this->register_common_subscriber(EnabledSubscriber::class);
 		$this->register_common_subscriber(Subscriber::class);
+		$this->register_common_subscriber(NoContextSubscriber::class);
+		$this->register_common_subscriber(TrailingSubscriber::class);
 
 		$this->register_service(Context::class);
 		$this->register_service(EnabledContext::class);

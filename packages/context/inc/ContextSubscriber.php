@@ -29,9 +29,15 @@ class ContextSubscriber implements ContainerAwareInterface {
 			$this->context_mapper["$classname::$method"] = $this->load($classname, $method);
 		}
 
-		$context = $this->getContainer()->get($this->context_mapper["$classname::$method"]);
+        if(! $this->context_mapper["$classname::$method"]) {
+            return $activated;
+        }
 
-		return $context();
+        $id = ltrim($this->context_mapper["$classname::$method"], '\\');
+
+		$context = $this->getContainer()->get($id);
+
+		return $context($classname, $method);
 	}
 
 	protected function load(string $classname, string $method) {
@@ -56,10 +62,6 @@ class ContextSubscriber implements ContainerAwareInterface {
 		}
 
 		return $method_context;
-	}
-
-	protected function get_context() {
-
 	}
 
 	/**
