@@ -30,7 +30,7 @@ class ContextSubscriber implements ContainerAwareInterface {
     /**
      * Triggers the context to disable a method.
      *
-     * @hook $prefixcore_subscriber_disable_callback
+     * @hook $prefixcore_subscriber_callback_enabled
      *
      * @param boolean $activated Is the method activated.
      * @param string $classname Name from the class from the method.

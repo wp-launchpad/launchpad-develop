@@ -34,7 +34,7 @@ class Test_TriggerContext extends TestCase {
 			\LaunchpadContext\Tests\Fixtures\inc\ContextSubscriber\data\ServiceProvider::class,
 		]);
 
-		$enabled = apply_filters("{$prefix}core_subscriber_disable_callback", true, $config['subscriber'], $config['method']);
+		$enabled = apply_filters("{$prefix}core_subscriber_callback_enabled", true, $config['subscriber'], $config['method']);
 		$this->assertSame($expected['called'], $enabled);
 	}
 }
