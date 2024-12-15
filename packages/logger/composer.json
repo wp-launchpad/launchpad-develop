@@ -1,28 +1,32 @@
 {
-  "name": "wp-launchpad/logger",
-  "minimum-stability": "dev",
-  "description": "Logger from Launchpad",
-  "keywords": [
-    "wordpress"
-  ],
-  "license": "GPL-2.0-or-later",
-  "authors": [
-    {
-      "name": "CrochetFeve0251"
+    "name": "wp-launchpad/logger",
+    "description": "Logger from Launchpad",
+    "keywords": [
+        "wordpress"
+    ],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "CrochetFeve0251"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LaunchpadLogger\\": "inc/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaunchpadLogger\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "wp-launchpad/core": "^3.1",
+        "monolog/monolog": "^1.0 || ^2.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "feature/ll-subscribers": "3.1-dev"
+        }
     }
-  ],
-  "autoload": {
-    "psr-4": {
-      "LaunchpadLogger\\": "inc/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "LaunchpadLogger\\Tests\\": "tests/"
-    }
-  },
-  "require": {
-    "wp-launchpad/core": "^0.3 || @dev",
-    "monolog/monolog": "^1.0 || ^2.0"
-  }
 }

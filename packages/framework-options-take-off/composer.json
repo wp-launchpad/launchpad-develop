@@ -1,18 +1,20 @@
 {
-  "name": "wp-launchpad/framework-options-take-off",
-  "minimum-stability": "dev",
-  "description": "Options library take off for the framework Launchpad",
-  "require": {
-    "wp-launchpad/framework-options": "^0.3"
-  },
-  "extra": {
-    "launchpad": {
-      "clean": true,
-      "install": true,
-      "library_provider": "LaunchpadFrameworkOptions\\ServiceProvider",
-      "libraries" : {
-        "wp-launchpad/framework-options": "^0.3"
-      }
+    "name": "wp-launchpad/framework-options-take-off",
+    "description": "Options library take off for the framework Launchpad",
+    "require": {
+        "wp-launchpad/framework-options": "^3.1"
+    },
+    "extra": {
+        "launchpad": {
+            "clean": true,
+            "install": true,
+            "library_provider": "LaunchpadFrameworkOptions\\ServiceProvider",
+            "libraries": {
+                "wp-launchpad/framework-options": "^0.3"
+            }
+        },
+        "branch-alias": {
+            "feature/ll-subscribers": "3.1-dev"
+        }
     }
-  }
 }

@@ -1,25 +1,27 @@
 {
-  "name": "wp-launchpad/filesystem-take-off",
-  "description": "Initialize filesystem library for Launchpad framework",
-  "minimum-stability": "stable",
-  "license": "proprietary",
-  "type": "library",
-  "authors": [
-    {
-      "name": "coquardcyr",
-      "email": "coquardcyr@gmail.com"
+    "name": "wp-launchpad/filesystem-take-off",
+    "description": "Initialize filesystem library for Launchpad framework",
+    "license": "proprietary",
+    "type": "library",
+    "authors": [
+        {
+            "name": "coquardcyr",
+            "email": "coquardcyr@gmail.com"
+        }
+    ],
+    "require": {
+        "wp-launchpad/filesystem": "^3.1"
+    },
+    "extra": {
+        "launchpad": {
+            "clean": true,
+            "install": true,
+            "libraries": {
+                "wp-launchpad/filesystem": "^0.0.2"
+            }
+        },
+        "branch-alias": {
+            "feature/ll-subscribers": "3.1-dev"
+        }
     }
-  ],
-  "require": {
-    "wp-launchpad/filesystem": "^0.0.2"
-  },
-  "extra": {
-    "launchpad": {
-      "clean": true,
-      "install": true,
-      "libraries" : {
-        "wp-launchpad/filesystem": "^0.0.2"
-      }
-    }
-  }
 }

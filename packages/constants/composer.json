@@ -1,23 +1,28 @@
 {
-  "name": "wp-launchpad/constants",
-  "description": "Constants from Launchpad",
-  "keywords": [
-    "wordpress"
-  ],
-  "autoload": {
-    "psr-4": {
-      "LaunchpadConstants\\": "inc/"
+    "name": "wp-launchpad/constants",
+    "description": "Constants from Launchpad",
+    "keywords": [
+        "wordpress"
+    ],
+    "autoload": {
+        "psr-4": {
+            "LaunchpadConstants\\": "inc/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaunchpadConstants\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "wp-launchpad/dispatcher": "^3.1"
+    },
+    "require-dev": {
+        "wp-media/phpunit": "^3.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "feature/ll-subscribers": "3.1-dev"
+        }
     }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "LaunchpadConstants\\Tests\\": "tests/"
-    }
-  },
-  "require": {
-    "wp-launchpad/dispatcher": "^1.0 || @dev"
-  },
-  "require-dev": {
-    "wp-media/phpunit": "^3.0"
-  }
 }

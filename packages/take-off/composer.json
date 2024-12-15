@@ -1,7 +1,6 @@
 {
     "name": "wp-launchpad/take-off",
     "description": "Initialisation library for Launchpad",
-    "minimum-stability": "stable",
     "license": "proprietary",
     "type": "library",
     "authors": [
@@ -11,7 +10,7 @@
         }
     ],
     "require": {
-        "wp-launchpad/cli": "^1.0.1 || @dev",
+        "wp-launchpad/cli": "^3.1",
         "ext-mbstring": "*",
         "ext-json": "*",
         "composer/composer": "^2.5",
@@ -38,5 +37,10 @@
             "@test-unit",
             "@test-integration"
         ]
+    },
+    "extra": {
+        "branch-alias": {
+            "feature/ll-subscribers": "3.1-dev"
+        }
     }
 }
