@@ -12,10 +12,23 @@ class CronSubscriber implements PrefixAwareInterface, DispatcherAwareInterface
 {
     use PrefixAware, DispatcherAwareTrait;
 
+    /**
+     * Schedules to register.
+     *
+     * @var array
+     */
     protected $schedules;
 
+    /**
+     * Events to schedule.
+     *
+     * @var array
+     */
     protected $events;
 
+    /**
+     * Instantiate the class.
+     */
     public function __construct()
     {
         $this->events = [];
@@ -24,7 +37,13 @@ class CronSubscriber implements PrefixAwareInterface, DispatcherAwareInterface
 
 
     /**
+     * Parse the cron annotations.
+     *
      * @hook $prefixcore_subscriber_events
+     *
+     * @param array $events Class events.
+     * @param string $classname Classname.
+     * @return array
      */
     public function parse_crons($events, $classname) {
         if(! is_array($events)) {
@@ -85,6 +104,8 @@ class CronSubscriber implements PrefixAwareInterface, DispatcherAwareInterface
     }
 
     /**
+     * Register events.
+     *
      * @hook init
      */
     public function register_events()
@@ -99,6 +120,8 @@ class CronSubscriber implements PrefixAwareInterface, DispatcherAwareInterface
     }
 
     /**
+     * Register schedules.
+     *
      * @hook cron_schedules
      */
     public function register_schedules($schedules)
