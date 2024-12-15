@@ -85,7 +85,7 @@ jobs:
           composer global require soyuka/pmu
           composer global config allow-plugins.soyuka/pmu true --no-interaction
           composer ${{matrix.component}} config allow-plugins.composer/installers false --no-interaction
-          composer global link . --permanent
+          composer global link ../launchpad-develop --permanent
           composer ${{matrix.component}} update
 
       - name: Require phpcov for coverage reporting
