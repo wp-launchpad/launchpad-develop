@@ -39,6 +39,9 @@ jobs:
           - wp-launchpad/phpunit-wp-hooks
           - wp-launchpad/renderer-take-off
           - wp-launchpad/take-off
+          - wp-launchpad/ajax
+          - wp-launchpad/cron
+          - wp-launchpad/context
 
     name: ${{ matrix.component }} WP ${{ matrix.wp-versions }} with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}.
 
