@@ -83,6 +83,7 @@ jobs:
       - name: Run ${{ matrix.component }} install
         run: |
           composer i
+          composer link . --permanent
           composer ${{matrix.component}} config allow-plugins.composer/installers false --no-interaction
           composer ${{matrix.component}} update
 
