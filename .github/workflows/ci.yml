@@ -41,6 +41,7 @@ jobs:
           - wp-launchpad/ajax
           - wp-launchpad/cron
           - wp-launchpad/context
+          - wp-launchpad/front-take-off
 
     name: ${{ matrix.component }} WP ${{ matrix.wp-versions }} with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}.
 
