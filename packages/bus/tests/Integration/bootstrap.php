@@ -24,9 +24,10 @@ tests_add_filter(
         }
 
 		$container = new Container();
+		$dispatcher = new Dispatcher();
 		$prefix = 'test';
 
-        $plugin = new Plugin($container, new EventManager(), new SubscriberWrapper($prefix, $container), new Dispatcher());
+        $plugin = new Plugin($container, new EventManager(), new SubscriberWrapper($prefix, $container, $dispatcher), $dispatcher);
         $plugin->load([
             'prefix' => $prefix,
             'version' => '3.16'

@@ -68,7 +68,7 @@ class ContextSubscriber implements ContainerAwareInterface {
 
 		$reflection_class = new ReflectionClass( $classname );
 		$docblock         = $reflection_class->getDocComment() ? $reflection_class->getDocComment() : '';
-		$context          = $this->fetch_context( $docblock );
+		$context          = $this->fetch_context( $docblock ) ?: '';
 		try {
 			$method_reflection = $reflection_class->getMethod( $method );
 		} catch ( \ReflectionException $e ) {
