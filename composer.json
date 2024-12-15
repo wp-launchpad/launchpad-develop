@@ -19,7 +19,8 @@
         }
     },
     "replace": {
-        "wp-launchpad/uninstaller": "self.version"
+        "wp-launchpad/uninstaller": "self.version",
+        "wp-launchpad/dispatcher": "self.version"
     },
     "config": {
         "allow-plugins": {
