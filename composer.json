@@ -18,10 +18,13 @@
             "feature/ll-subscribers": "3.1-dev"
         }
     },
+    "replace": {
+        "wp-launchpad/uninstaller": "self.version"
+    },
     "config": {
         "allow-plugins": {
             "soyuka/pmu": true,
             "composer/installers": true
         }
     }
-}
+},
