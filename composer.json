@@ -26,6 +26,7 @@
         "wp-launchpad/filesystem": "self.version",
         "wp-launchpad/uninstaller": "self.version",
         "wp-launchpad/front": "self.version",
+        "wp-launchpad/bud-assets": "self.version",
         "wp-launchpad/dispatcher": "self.version"
     },
     "config": {
