@@ -16,6 +16,7 @@
         }
     },
     "replace": {
+        "wp-launchpad/core": "self.version",
         "wp-launchpad/uninstaller": "self.version",
         "wp-launchpad/dispatcher": "self.version"
     },
