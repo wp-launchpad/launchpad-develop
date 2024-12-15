@@ -27,10 +27,5 @@
         "psr-4": {
             "LaunchpadFront\\Tests\\": "tests/"
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-feature/ll-subscribers": "3.1-dev"
-        }
     }
 }

@@ -23,6 +23,7 @@
         "wp-launchpad/logger": "self.version",
         "wp-launchpad/bus": "self.version",
         "wp-launchpad/renderer": "self.version",
+        "wp-launchpad/filesystem": "self.version",
         "wp-launchpad/uninstaller": "self.version",
         "wp-launchpad/dispatcher": "self.version"
     },
