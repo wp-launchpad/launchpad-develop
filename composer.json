@@ -1,20 +1,21 @@
 {
     "name": "wp-launchpad/launchpad-develop",
     "minimum-stability": "dev",
-    "require": {
-        "wp-launchpad/launchpad": "@dev",
-        "wp-launchpad/logger": "@dev",
-        "wp-launchpad/renderer": "@dev",
-        "wp-launchpad/bus": "@dev",
-        "wp-launchpad/options": "@dev",
-        "wp-launchpad/uninstaller": "@dev"
-    },
     "require-dev": {
-        "soyuka/pmu": "^0.0.15"
+        "soyuka/pmu": "dev-main"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:CrochetFeve0251/pmu.git"
+        }
+    ],
     "extra": {
         "pmu": {
-            "projects": ["./packages/*/composer.json"]
+            "projects": ["packages/*/composer.json"]
+        },
+        "branch-alias": {
+            "feature/ll-subscribers": "3.1-dev"
         }
     },
     "config": {
