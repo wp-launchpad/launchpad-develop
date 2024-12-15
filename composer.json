@@ -2,7 +2,7 @@
     "name": "wp-launchpad/launchpad-develop",
     "minimum-stability": "dev",
     "require-dev": {
-        "soyuka/pmu": "dev-main"
+        "soyuka/pmu": "v0.0.16"
     },
     "repositories": [
         {
@@ -20,7 +20,8 @@
     },
     "config": {
         "allow-plugins": {
-            "soyuka/pmu": true
+            "soyuka/pmu": true,
+            "composer/installers": true
         }
     }
 }
