@@ -17,6 +17,12 @@
     },
     "replace": {
         "wp-launchpad/core": "self.version",
+        "wp-launchpad/build": "self.version",
+        "wp-launchpad/cli": "self.version",
+        "wp-launchpad/constants": "self.version",
+        "wp-launchpad/logger": "self.version",
+        "wp-launchpad/bus": "self.version",
+        "wp-launchpad/renderer": "self.version",
         "wp-launchpad/uninstaller": "self.version",
         "wp-launchpad/dispatcher": "self.version"
     },
