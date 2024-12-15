@@ -13,9 +13,6 @@
     "extra": {
         "pmu": {
             "projects": ["packages/*/composer.json"]
-        },
-        "branch-alias": {
-            "feature/ll-subscribers": "3.1-dev"
         }
     },
     "replace": {
