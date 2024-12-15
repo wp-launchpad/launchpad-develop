@@ -35,9 +35,6 @@
             "libraries": {
                 "berlindb/core": "^2.0"
             }
-        },
-        "branch-alias": {
-            "dev-feature/ll-subscribers": "3.1-dev"
         }
     },
     "scripts": {
