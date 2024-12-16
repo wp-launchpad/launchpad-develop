@@ -2,6 +2,7 @@
 namespace LaunchpadUninstaller\Uninstall;
 
 use LaunchpadCore\Container\HasInflectorInterface;
+use LaunchpadUninstaller\Uninstall\Wrapper\UninstallerWrapper;
 use Psr\Container\ContainerInterface;
 
 class Uninstall
@@ -51,6 +52,8 @@ class Uninstall
             self::$container->addServiceProvider($provider);
         }
 
+		$wrapper = new UninstallerWrapper();
+
         foreach ( $providers as $service_provider ) {
             if( ! $service_provider instanceof HasInflectorInterface ) {
                 continue;
@@ -65,9 +68,8 @@ class Uninstall
 
             foreach ( $provider->get_uninstallers() as $uninstaller ) {
                 $uninstaller_instance = self::$container->get( $uninstaller );
-                if(! $uninstaller_instance instanceof UninstallerInterface) {
-                    continue;
-                }
+                $uninstaller_instance = $wrapper->wrap($uninstaller_instance);
+
                 $uninstaller_instance->uninstall();
             }
         }
