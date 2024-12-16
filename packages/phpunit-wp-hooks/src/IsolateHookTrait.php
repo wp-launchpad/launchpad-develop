@@ -15,16 +15,26 @@ trait IsolateHookTrait
         global $wp_filter;
         $this->original_wp_filter[ $event_name ] = $wp_filter[ $event_name ]->callbacks;
 
-        foreach ( $this->original_wp_filter[ $event_name ][ $priority ] as $key => $config ) {
+		$callbacks = [];
+
+		foreach ( $this->original_wp_filter[ $event_name ][ $priority ] as $key => $config ) {
 
             // Skip if not this tests callback.
             if ( substr( $key, - strlen( $method_name ) ) !== $method_name ) {
                 continue;
             }
 
-            $wp_filter[ $event_name ]->callbacks = [
-                $priority => [ $key => $config ],
-            ];
+			if(key_exists($priority, $callbacks)) {
+				$callbacks = [
+					$priority => array_merge_recursive($callbacks[$priority], [ $key => $config ])
+				];
+			}else {
+				$callbacks = [
+					$priority => [ $key => $config ],
+				];
+			}
+
+			$wp_filter[ $event_name ]->callbacks = $callbacks;
         }
 
         try {
