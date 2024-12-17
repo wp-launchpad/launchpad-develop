@@ -2,17 +2,18 @@
 
 namespace LaunchpadUninstaller\Tests\Fixtures\inc\boot\autowiring\inc;
 
-use LaunchpadCore\Activation\ActivationInterface;
 use LaunchpadCore\Container\PrefixAware;
 use LaunchpadCore\Container\PrefixAwareInterface;
+use LaunchpadCore\Deactivation\DeactivationInterface;
 use LaunchpadCore\Dispatcher\DispatcherAwareInterface;
 use LaunchpadCore\Dispatcher\DispatcherAwareTrait;
+use LaunchpadUninstaller\Uninstall\UninstallerInterface;
 
-class Activator implements ActivationInterface, PrefixAwareInterface, DispatcherAwareInterface
+class Uninstall implements UninstallerInterface, PrefixAwareInterface, DispatcherAwareInterface
 {
     use PrefixAware, DispatcherAwareTrait;
 
-    protected $activateDependency;
+    protected $uninstallDependency;
 
     /**
      * @var Cache
@@ -21,20 +22,19 @@ class Activator implements ActivationInterface, PrefixAwareInterface, Dispatcher
 
     protected $key_param;
 
-    public function __construct(UninstallDependency $activateDependency, $cache, $key_param)
+    public function __construct(UninstallDependency $uninstallDependency, $cache, $key_param)
     {
-        $this->activateDependency = $activateDependency;
-        $this->cache = $cache;
+        $this->uninstallDependency = $uninstallDependency;
+        $this->cache               = $cache;
         $this->key_param = $key_param;
     }
-
 
     /**
      * @inheritDoc
      */
-    public function activate()
+    public function uninstall()
     {
-        update_option('demo_option', true);
+        delete_option('demo_option');
         $this->dispatcher->do_action("{$this->prefix}test");
         $this->cache->clean();
     }

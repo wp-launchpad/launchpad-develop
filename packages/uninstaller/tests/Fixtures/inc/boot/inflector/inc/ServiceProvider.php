@@ -5,8 +5,8 @@ namespace LaunchpadUninstaller\Tests\Fixtures\inc\boot\inflector\inc;
 use LaunchpadCore\Container\AbstractServiceProvider;
 use LaunchpadCore\Container\HasInflectorInterface;
 use LaunchpadCore\Container\InflectorServiceProviderTrait;
-use LaunchpadCore\Tests\Fixtures\inc\boot\inflector\inc\Inflector\Inflected;
-use LaunchpadCore\Tests\Fixtures\inc\boot\inflector\inc\Inflector\InflectorInterface;
+use LaunchpadUninstaller\Tests\Fixtures\inc\boot\inflector\inc\Inflector\Inflected;
+use LaunchpadUninstaller\Tests\Fixtures\inc\boot\inflector\inc\Inflector\InflectorInterface;
 
 class ServiceProvider extends AbstractServiceProvider implements HasInflectorInterface
 {

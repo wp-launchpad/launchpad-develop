@@ -2,7 +2,7 @@
 
 namespace LaunchpadUninstaller\Tests\Fixtures\inc\boot\inflector\inc;
 
-class AnnotationDeactivator {
+class AnnotationUninstaller {
 	/**
 	 * @deactivate
 	 */

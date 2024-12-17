@@ -1,6 +1,6 @@
 <?php
 
-namespace LaunchpadCore\Tests\Fixtures\inc\boot\inflector\inc\Inflector;
+namespace LaunchpadUninstaller\Tests\Fixtures\inc\boot\inflector\inc\Inflector;
 
 interface InflectorInterface
 {

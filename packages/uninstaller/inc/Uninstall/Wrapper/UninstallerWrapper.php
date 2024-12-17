@@ -30,8 +30,9 @@ class UninstallerWrapper {
 			}
 			$pattern = '#@uninstall#';
 
-			preg_match_all( $pattern, $doc_comment, $matches, PREG_PATTERN_ORDER );
-			if ( ! $matches ) {
+			$matched = preg_match_all( $pattern, $doc_comment, $matches, PREG_PATTERN_ORDER );
+
+			if ( ! $matched ) {
 				continue;
 			}
 

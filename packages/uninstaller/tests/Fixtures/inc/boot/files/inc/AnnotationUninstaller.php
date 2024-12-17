@@ -2,12 +2,12 @@
 
 namespace LaunchpadUninstaller\Tests\Fixtures\inc\boot\files\inc;
 
-class AnnotationActivator {
 
+class AnnotationUninstaller {
 	/**
-	 * @activate
+	 * @uninstall
 	 */
 	public function update() {
-		update_option('demo_option_2', true);
+		delete_option('demo_option_2');
 	}
 }

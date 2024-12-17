@@ -4,11 +4,11 @@ namespace LaunchpadUninstaller\Tests\Fixtures\inc\boot\files\inc;
 
 use LaunchpadCore\Container\PrefixAware;
 use LaunchpadCore\Container\PrefixAwareInterface;
-use LaunchpadCore\Deactivation\DeactivationInterface;
 use LaunchpadCore\Dispatcher\DispatcherAwareInterface;
 use LaunchpadCore\Dispatcher\DispatcherAwareTrait;
+use LaunchpadUninstaller\Uninstall\UninstallerInterface;
 
-class Deactivator implements DeactivationInterface, PrefixAwareInterface, DispatcherAwareInterface
+class Uninstaller implements UninstallerInterface, PrefixAwareInterface, DispatcherAwareInterface
 {
     use PrefixAware, DispatcherAwareTrait;
 
@@ -21,7 +21,7 @@ class Deactivator implements DeactivationInterface, PrefixAwareInterface, Dispat
      */
     protected $cache;
 
-    public function __construct(DeactivateDependency $deactivateDependency, $key, $cache)
+    public function __construct(UninstallDependency $deactivateDependency, $key, $cache)
     {
         $this->deactivateDependency = $deactivateDependency;
         $this->key = $key;
@@ -31,7 +31,7 @@ class Deactivator implements DeactivationInterface, PrefixAwareInterface, Dispat
     /**
      * @inheritDoc
      */
-    public function deactivate()
+    public function uninstall()
     {
         delete_option('demo_option');
         $this->dispatcher->do_action("{$this->prefix}test");

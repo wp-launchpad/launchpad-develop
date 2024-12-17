@@ -4,9 +4,10 @@ namespace LaunchpadUninstaller\Tests\Fixtures\inc\boot\files\inc;
 
 use LaunchpadCore\Container\AbstractServiceProvider;
 use LaunchpadCore\Deactivation\HasDeactivatorServiceProviderInterface;
+use LaunchpadUninstaller\Uninstall\HasUninstallerServiceProviderInterface;
 use League\Container\Definition\Definition;
 
-class DeactivateServiceProvider extends AbstractServiceProvider implements HasDeactivatorServiceProviderInterface
+class UninstallServiceProvider extends AbstractServiceProvider implements HasUninstallerServiceProviderInterface
 {
 
     /**
@@ -14,8 +15,8 @@ class DeactivateServiceProvider extends AbstractServiceProvider implements HasDe
      */
     protected function define()
     {
-        $this->register_service(Deactivator::class, function (Definition $definition) {
-            $definition->addArgument(DeactivateDependency::class);
+        $this->register_service(Uninstaller::class, function (Definition $definition) {
+            $definition->addArgument(UninstallDependency::class);
             $definition->addArgument('key_param');
             $definition->addArgument('cache');
         });
@@ -24,10 +25,10 @@ class DeactivateServiceProvider extends AbstractServiceProvider implements HasDe
     /**
      * @inheritDoc
      */
-    public function get_deactivators(): array
+    public function get_uninstallers(): array
     {
         return [
-            Deactivator::class
+            Uninstaller::class
         ];
     }
 }

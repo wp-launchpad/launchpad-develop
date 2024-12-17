@@ -2,39 +2,38 @@
 
 namespace LaunchpadUninstaller\Tests\Fixtures\inc\boot\inflector\inc;
 
-use LaunchpadCore\Activation\ActivationInterface;
 use LaunchpadCore\Container\PrefixAware;
 use LaunchpadCore\Container\PrefixAwareInterface;
 use LaunchpadCore\Dispatcher\DispatcherAwareInterface;
 use LaunchpadCore\Dispatcher\DispatcherAwareTrait;
-use LaunchpadCore\Tests\Fixtures\inc\boot\inflector\inc\Inflector\Inflected;
-use LaunchpadCore\Tests\Fixtures\inc\boot\inflector\inc\Inflector\InflectorInterface;
+use LaunchpadUninstaller\Tests\Fixtures\inc\boot\inflector\inc\Inflector\Inflected;
+use LaunchpadUninstaller\Tests\Fixtures\inc\boot\inflector\inc\Inflector\InflectorInterface;
+use LaunchpadUninstaller\Uninstall\UninstallerInterface;
 
-class Activator implements ActivationInterface, PrefixAwareInterface, DispatcherAwareInterface, InflectorInterface
+class Uninstaller implements UninstallerInterface, PrefixAwareInterface, DispatcherAwareInterface, InflectorInterface
 {
     use PrefixAware, DispatcherAwareTrait;
 
-    protected $activateDependency;
+    protected $uninstallDependency;
 
     /**
      * @var Inflected
      */
     protected $inflected;
 
-    public function __construct(ActivateDependency $activateDependency)
+    public function __construct(UninstallDependency $uninstallDependency)
     {
-        $this->activateDependency = $activateDependency;
+        $this->uninstallDependency = $uninstallDependency;
     }
-
 
     /**
      * @inheritDoc
      */
-    public function activate()
+    public function uninstall()
     {
-        update_option('demo_option', true);
-        $this->inflected->method();
+        delete_option('demo_option');
         $this->dispatcher->do_action("{$this->prefix}test");
+		$this->inflected->method();
     }
 
     public function inflector_method(Inflected $inflected)
