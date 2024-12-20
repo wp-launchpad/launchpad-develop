@@ -1,0 +1,24 @@
+{
+  "name": "wp-launchpad/ajax-take-off",
+  "description": "Ajax installator library for Launchpad framework",
+  "type": "library",
+  "authors": [
+    {
+      "name": "coquardcyr",
+      "email": "coquardcyr@gmail.com"
+    }
+  ],
+  "require": {
+    "wp-launchpad/ajax": "^3.1"
+  },
+  "extra": {
+    "launchpad": {
+      "library_provider": "LaunchpadAjax\\ServiceProvider",
+      "libraries": {
+        "wp-launchpad/ajax": "^3.1"
+      },
+      "install": true,
+      "clean": true
+    }
+  }
+}

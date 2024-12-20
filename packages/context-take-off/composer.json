@@ -1,0 +1,24 @@
+{
+  "name": "wp-launchpad/context-take-off",
+  "description": "Context installator library for Launchpad framework",
+  "type": "library",
+  "authors": [
+    {
+      "name": "coquardcyr",
+      "email": "coquardcyr@gmail.com"
+    }
+  ],
+  "require": {
+    "wp-launchpad/context": "^3.1"
+  },
+  "extra": {
+    "launchpad": {
+      "library_provider": "LaunchpadContext\\ServiceProvider",
+      "libraries": {
+        "wp-launchpad/context": "^3.1"
+      },
+      "install": true,
+      "clean": true
+    }
+  }
+}
