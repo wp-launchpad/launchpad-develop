@@ -24,6 +24,7 @@ jobs:
           - wp-launchpad/core
           - wp-launchpad/dispatcher
           - wp-launchpad/uninstaller
+          - wp-launchpad/uninstaller-take-off
           - wp-launchpad/updater
           - wp-launchpad/cli
           - wp-launchpad/bud-assets
