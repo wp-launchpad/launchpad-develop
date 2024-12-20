@@ -18,7 +18,7 @@
             "install": true,
             "clean": true,
             "libraries": {
-                "wp-launchpad/updater": "^0.3"
+                "wp-launchpad/updater": "^3.1"
             }
         }
     }

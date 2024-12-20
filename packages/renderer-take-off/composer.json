@@ -26,7 +26,7 @@
             "install": true,
             "clean": true,
             "libraries": {
-                "wp-launchpad/renderer": "^1.3"
+                "wp-launchpad/renderer": "^3.1"
             }
         }
     },

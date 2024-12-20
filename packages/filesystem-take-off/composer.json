@@ -17,7 +17,7 @@
             "clean": true,
             "install": true,
             "libraries": {
-                "wp-launchpad/filesystem": "^0.0.2"
+                "wp-launchpad/filesystem": "^3.1"
             }
         }
     }

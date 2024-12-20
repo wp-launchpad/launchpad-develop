@@ -15,7 +15,7 @@
     "extra": {
         "launchpad": {
             "libraries": {
-                "wp-launchpad/http-client": "^0.0.1"
+                "wp-launchpad/http-client": "^3.1"
             },
             "clean": true
         }

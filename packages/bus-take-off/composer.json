@@ -30,7 +30,7 @@
             "command": "bus:install",
             "install": true,
             "libraries": {
-                "wp-launchpad/bus": "^1.3"
+                "wp-launchpad/bus": "^3.1"
             }
         }
     },

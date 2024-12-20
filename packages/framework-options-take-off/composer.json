@@ -10,7 +10,7 @@
             "install": true,
             "library_provider": "LaunchpadFrameworkOptions\\ServiceProvider",
             "libraries": {
-                "wp-launchpad/framework-options": "^0.3"
+                "wp-launchpad/framework-options": "^3.1"
             }
         }
     }

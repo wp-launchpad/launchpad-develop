@@ -7,7 +7,7 @@
             "clean": true,
             "install": true,
             "libraries": {
-                "wp-launchpad/framework-constants": "^0.1"
+                "wp-launchpad/framework-constants": "^3.1"
             }
         }
     }
