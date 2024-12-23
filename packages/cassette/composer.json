@@ -28,5 +28,8 @@
     "run-tests": [
       "@test-integration"
     ]
+  },
+  "require": {
+    "wp-launchpad/phpunit-wp-hooks": "^3.1"
   }
 }

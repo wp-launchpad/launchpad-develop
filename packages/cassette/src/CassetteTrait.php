@@ -1,12 +1,14 @@
 <?php
 
 trait CassetteTrait {
+    use \WPLaunchpadPHPUnitWPHooks\MockHooks;
 
 	/**
 	 * @hook pre_http_request
 	 */
-	public function play_request() {
+	public function play_request($response, $args, $url) {
 
+        return $response;
 	}
 
 	/**
