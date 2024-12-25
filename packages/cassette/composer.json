@@ -31,6 +31,7 @@
   },
   "require": {
     "wp-launchpad/phpunit-wp-hooks": "^3.1",
-    "wp-launchpad/filesystem": "^3.1"
+    "wp-launchpad/filesystem": "^3.1",
+    "ext-yaml": "*"
   }
 }

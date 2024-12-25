@@ -10,4 +10,12 @@
             <directory suffix=".php">src</directory>
         </testsuite>
     </testsuites>
+    <extensions>
+        <extension class="LaunchpadCassette\RegistrationCassette">
+        </extension>
+    </extensions>
+    <php>
+        <env name="launchpad_cassette_base_dir" value="../Cassettes/"/>
+    </php>
+
 </phpunit>

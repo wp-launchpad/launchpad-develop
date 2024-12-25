@@ -17,7 +17,7 @@ class RecorderBuilder {
 	public function build(string $path): Recorder {
 		$recorder = new Recorder();
 
-		if( ! $this->filesystem->is_file($path)) {
+        if( ! $this->filesystem->is_file($path)) {
 			return $recorder;
 		}
 
