@@ -4,23 +4,18 @@ namespace LaunchpadCassette;
 
 class Recorder
 {
-    protected $recording_dir;
-
     protected $requests;
 
-    /**
-     * @param $recording_dir
-     */
-    public function __construct($recording_dir)
-    {
-        $this->recording_dir = $recording_dir;
-    }
-
-    protected function load() {
-
+    public function load(array $requests) {
+		$this->requests = $requests;
     }
 
     public function play($response, $args, $url) {
-
+		foreach ($this->requests as $request) {
+			if( $request->applies($args, $url)) {
+				return $request->get_response();
+			}
+		}
+		return $response;
     }
 }

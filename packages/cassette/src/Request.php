@@ -2,7 +2,7 @@
 
 namespace LaunchpadCassette;
 
-class Requests
+class Request
 {
     protected $url = '';
     protected $method = 'GET';
@@ -60,8 +60,16 @@ class Requests
         return $this;
     }
 
-    public function get_response() {
-        return $this->responses;
+    public function get_response(): array {
+		/**
+		 * @var Response $response
+		 */
+        $response = $this->responses[0];
+
+		return [
+			'code' => $response->get_status(),
+			''
+		];
     }
 
     public function add_response(Response $response): self {
@@ -69,4 +77,12 @@ class Requests
 
         return $this;
     }
+
+	public function applies(string $url, array $args): bool {
+		if($url !== $this->url) {
+			return false;
+		}
+
+		return true;
+	}
 }

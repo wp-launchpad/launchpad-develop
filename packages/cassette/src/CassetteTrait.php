@@ -1,14 +1,26 @@
 <?php
+namespace LaunchpadCassette;
+
+use WPLaunchpadPHPUnitWPHooks\MockHooks;
 
 trait CassetteTrait {
-    use \WPLaunchpadPHPUnitWPHooks\MockHooks;
+    use MockHooks;
+
+	/**
+	 * @var Recorder
+	 */
+	protected $recorder;
+
+	protected function register_cassette() {
+		$builder = new RecorderBuilder();
+		$this->recorder = $builder->build("{$this->get_base_directory_cassettes()}/{$this->getCurrentTest()}");
+	}
 
 	/**
 	 * @hook pre_http_request
 	 */
 	public function play_request($response, $args, $url) {
-
-        return $response;
+		return $this->recorder->play($response, $args, $url);
 	}
 
 	/**

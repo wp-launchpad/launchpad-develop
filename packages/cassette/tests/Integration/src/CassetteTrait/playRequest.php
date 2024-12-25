@@ -1,10 +1,18 @@
 <?php
+namespace LaunchpadCassette\Tests\Integration\src\CassetteTrait;
+
+use LaunchpadCassette\CassetteTrait;
 
 class Test_PlayRequest extends \LaunchpadCassette\Tests\Integration\TestCase {
 
     use CassetteTrait;
 
     protected $config;
+
+	public function set_up() {
+		parent::set_up();
+		$this->register_cassette();
+	}
 
 	/**
 	 * @dataProvider configTestData
@@ -21,7 +29,7 @@ class Test_PlayRequest extends \LaunchpadCassette\Tests\Integration\TestCase {
 
     public function get_base_directory_cassettes(): string
     {
-        return $this->config['root_path'];
+        return str_replace('Integration', 'Fixtures', __DIR__);
     }
 
     protected function getCurrentTest(): string
