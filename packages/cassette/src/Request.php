@@ -85,6 +85,14 @@ class Request
 			return false;
 		}
 
+        if( ! key_exists( 'method', $args ) && 'GET' !== $this->method) {
+            return false;
+        }
+
+        if(key_exists('method', $args) && $this->method !== $args['method']) {
+            return false;
+        }
+
 		return true;
 	}
 }
