@@ -12,8 +12,9 @@ trait CassetteTrait {
 	protected $recorder;
 
 	protected function register_cassette() {
-		$builder = new RecorderBuilder();
-		$this->recorder = $builder->build("{$this->get_base_directory_cassettes()}/{$this->getCurrentTest()}");
+		$builder = new RecorderBuilder($this->get_base_directory_cassettes(), static::class);
+		$this->recorder = $builder->build("{$this->getName()}");
+        $this->mockHooks();
 	}
 
 	/**

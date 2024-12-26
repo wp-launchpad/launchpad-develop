@@ -67,9 +67,11 @@ class Request
         $response = $this->responses[0];
 
 		return [
-			'code' => $response->get_status(),
-			''
-		];
+            'response' => [
+                'code' => $response->get_status(),
+            ],
+            'body' => $response->get_body()
+        ];
     }
 
     public function add_response(Response $response): self {

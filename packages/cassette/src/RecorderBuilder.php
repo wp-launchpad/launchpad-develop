@@ -3,6 +3,7 @@
 namespace LaunchpadCassette;
 
 use LaunchpadFilesystem\WPFilesystemDirect;
+use ReflectionClass;
 
 class RecorderBuilder {
 	/**
@@ -10,18 +11,26 @@ class RecorderBuilder {
 	 */
 	protected $filesystem;
 
-	public function __construct() {
-		$this->filesystem = new WPFilesystemDirect();
-	}
+    protected $base_dir;
 
-	public function build(string $path): Recorder {
+    protected $classname;
+
+	public function __construct(string $base_dir, string $classname) {
+		$this->filesystem = new WPFilesystemDirect();
+	    $this->base_dir = $base_dir;
+        $this->classname = $classname;
+    }
+
+	public function build(string $test): Recorder {
 		$recorder = new Recorder();
 
-        if( ! $this->filesystem->is_file($path)) {
-			return $recorder;
+        $filename = $this->get_filename($test);
+
+        if( ! $this->filesystem->is_file($filename)) {
+            return $recorder;
 		}
 
-		$content = $this->filesystem->get_contents($path);
+		$content = $this->filesystem->get_contents($filename);
 
 		if( ! $content ) {
 			return $recorder;
@@ -73,11 +82,36 @@ class RecorderBuilder {
 				$registered_request->set_headers($response['headers']);
 			}
 
-			$requests []= $registered_request->add_response($response);
+            if( key_exists('body', $response) && key_exists('string', $response['body'])) {
+                $registered_response->set_body($response['body']['string']);
+            }
+
+			$requests []= $registered_request->add_response($registered_response);
 		}
 
 		$recorder->load($requests);
-var_dump($requests);
+
 		return $recorder;
 	}
+
+    protected function get_filename(string $test): string
+    {
+        if( ! preg_match('/(?<class>[^ ]+)( with data set "(?<dataset>[^"]+)")?/', $test, $matches) ) {
+            return '';
+        }
+
+        $method = $matches['class'];
+
+        $class = new ReflectionClass($this->classname);
+        $fullname = $class->getName();
+
+        $fullname .= '\\' . $method;
+
+        if(isset($matches['dataset'])) {
+            $dataset = $matches['dataset'];
+            $fullname .= '\\' . $dataset;
+        }
+
+        return $this->base_dir . str_replace('\\', '/', $fullname) . '.yaml';
+    }
 }

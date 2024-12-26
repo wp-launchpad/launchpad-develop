@@ -11,8 +11,9 @@ class Recorder
     }
 
     public function play($response, $args, $url) {
+
 		foreach ($this->requests as $request) {
-			if( $request->applies($args, $url)) {
+			if( $request->applies($url, $args)) {
 				return $request->get_response();
 			}
 		}

@@ -7,5 +7,6 @@ interactions:
       method: GET
       uri: http://example.org
     response:
+      code: 200
       body:
         string: test

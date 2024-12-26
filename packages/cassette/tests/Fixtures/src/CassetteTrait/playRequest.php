@@ -12,5 +12,5 @@ return [
             'code' => 200,
             'body' => 'test'
 		]
-	]
+	],
 ];

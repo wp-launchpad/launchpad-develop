@@ -2,11 +2,14 @@
 
 namespace LaunchpadCassette\Tests\Integration;
 
+use LaunchpadCassette\CassetteTrait;
 use ReflectionObject;
 use WPMedia\PHPUnit\Integration\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
+    use CassetteTrait;
+
     protected $config;
     public function set_up() {
         parent::set_up();
