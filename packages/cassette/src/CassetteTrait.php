@@ -17,6 +17,11 @@ trait CassetteTrait {
         $this->mockHooks();
 	}
 
+    protected function unregister_cassette() {
+        $this->recorder = null;
+        $this->mockHooks();
+    }
+
 	/**
 	 * @hook pre_http_request
 	 */

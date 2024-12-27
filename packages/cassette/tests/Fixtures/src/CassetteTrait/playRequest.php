@@ -24,4 +24,18 @@ return [
             'body' => 'test2'
         ]
     ],
+    'ContentTypeRequestShouldPlayRecorded' => [
+        'configs' => [
+            'url' => 'http://example.org',
+            'parameters' => [
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'expected' => [
+            'code' => 200,
+            'body' => 'test3'
+        ]
+    ],
 ];

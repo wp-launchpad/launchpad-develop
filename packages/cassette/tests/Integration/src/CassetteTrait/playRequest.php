@@ -11,7 +11,13 @@ class Test_PlayRequest extends \LaunchpadCassette\Tests\Integration\TestCase {
         $this->register_cassette();
 	}
 
-	/**
+    public function tear_down()
+    {
+        $this->unregister_cassette();
+        parent::tear_down();
+    }
+
+    /**
 	 * @dataProvider configTestData
 	 */
 	public function testShouldDoAsExpected($config, $expected) {

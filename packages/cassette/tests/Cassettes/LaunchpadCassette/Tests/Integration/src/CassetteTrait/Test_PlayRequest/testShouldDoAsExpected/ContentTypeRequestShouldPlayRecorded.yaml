@@ -1,0 +1,24 @@
+interactions:
+  - request:
+      body: null
+      headers:
+        Accept:
+          - '*/*'
+      method: GET
+      uri: http://example.org
+    response:
+      code: 200
+      body:
+        string: test
+  - request:
+      body: null
+      headers:
+        Accept:
+          - '*/*'
+        Content-Type: application/json
+      method: GET
+      uri: http://example.org
+    response:
+      code: 200
+      body:
+        string: test3

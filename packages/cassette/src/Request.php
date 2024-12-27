@@ -93,6 +93,25 @@ class Request
             return false;
         }
 
+        if(key_exists('headers', $args) && ! $this->match_headers($args['headers']) ) {
+            return false;
+        }
+
 		return true;
 	}
+
+    protected function match_headers(array $headers): bool
+    {
+        foreach ($headers as $header => $value) {
+            if(! key_exists($header, $this->headers)) {
+                return false;
+            }
+
+            if( $this->headers[$header] !== $value) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
