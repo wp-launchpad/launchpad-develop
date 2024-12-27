@@ -1,9 +1,6 @@
 interactions:
   - request:
       body: null
-      headers:
-        Accept:
-          - '*/*'
       method: GET
       uri: http://example.org
     response:
@@ -12,9 +9,6 @@ interactions:
         string: test
   - request:
       body: null
-      headers:
-        Accept:
-          - '*/*'
       method: POST
       uri: http://example.org
     response:

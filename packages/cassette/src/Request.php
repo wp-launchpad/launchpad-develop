@@ -64,7 +64,11 @@ class Request
 		/**
 		 * @var Response $response
 		 */
-        $response = $this->responses[0];
+        $response = array_shift($this->responses);
+
+        if(!$response) {
+            return [];
+        }
 
 		return [
             'response' => [

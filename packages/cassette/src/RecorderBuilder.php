@@ -86,10 +86,26 @@ class RecorderBuilder {
                 $registered_response->set_body($response['body']['string']);
             }
 
-			$requests []= $registered_request->add_response($registered_response);
-		}
+            $added = false;
+            foreach ($requests as $request) {
+                if(! $request->applies($request->get_url(), [
+                    'method' => $registered_request->get_method(),
+                    'headers' => $registered_request->get_headers(),
+                ])) {
+                    continue;
+                }
+                $added = true;
+                $request->add_response($registered_response);
+            }
 
-		$recorder->load($requests);
+            if( $added ) {
+                continue;
+            }
+
+            $requests []= $registered_request->add_response($registered_response);
+        }
+
+        $recorder->load($requests);
 
 		return $recorder;
 	}

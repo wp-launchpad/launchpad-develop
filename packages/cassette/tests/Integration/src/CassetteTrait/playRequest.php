@@ -24,9 +24,13 @@ class Test_PlayRequest extends \LaunchpadCassette\Tests\Integration\TestCase {
         $this->config = $config;
 
 		$response = wp_remote_request($config['url'], $config['parameters']);
+		$second_response = wp_remote_request($config['url'], $config['parameters']);
 
 		$this->assertSame($expected['code'], wp_remote_retrieve_response_code($response));
 		$this->assertSame($expected['body'], wp_remote_retrieve_body($response));
+        if(key_exists('second_body', $expected)) {
+            $this->assertSame($expected['second_body'], wp_remote_retrieve_body($second_response));
+        }
 
 	}
 

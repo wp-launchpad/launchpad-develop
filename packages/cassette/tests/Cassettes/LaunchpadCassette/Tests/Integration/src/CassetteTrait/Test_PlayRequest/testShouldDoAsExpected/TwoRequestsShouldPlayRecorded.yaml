@@ -9,8 +9,6 @@ interactions:
         string: test
   - request:
       body: null
-      headers:
-        Content-Type: application/json
       method: GET
       uri: http://example.org
     response:

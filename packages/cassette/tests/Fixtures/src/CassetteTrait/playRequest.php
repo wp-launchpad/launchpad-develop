@@ -38,4 +38,16 @@ return [
             'body' => 'test3'
         ]
     ],
+    'TwoRequestsShouldPlayRecorded' => [
+        'configs' => [
+            'url' => 'http://example.org',
+            'parameters' => [
+            ],
+        ],
+        'expected' => [
+            'code' => 200,
+            'body' => 'test',
+            'second_body' => 'test3',
+        ]
+    ],
 ];
