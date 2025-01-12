@@ -18,6 +18,9 @@ trait CassetteTrait {
 	}
 
     protected function unregister_cassette() {
+		$requests = $this->recorder->dumps();
+		$builder = new RecorderBuilder($this->get_base_directory_cassettes(), static::class);
+		$builder->save("{$this->getName()}", $requests);
         $this->recorder = null;
         $this->mockHooks();
     }
@@ -32,8 +35,9 @@ trait CassetteTrait {
 	/**
 	 * @hook http_response
 	 */
-	public function record_request() {
-
+	public function record_request($response, $parsed_args, $url ) {
+		$this->recorder->record($response, $parsed_args, $url );
+		return $response;
 	}
 
 	abstract public function get_base_directory_cassettes(): string;

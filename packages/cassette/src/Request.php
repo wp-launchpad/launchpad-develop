@@ -78,6 +78,13 @@ class Request
         ];
     }
 
+	/**
+	 * @return Response[]
+	 */
+	public function get_responses(): array {
+		return $this->responses;
+	}
+
     public function add_response(Response $response): self {
         $this->responses[] = $response;
 

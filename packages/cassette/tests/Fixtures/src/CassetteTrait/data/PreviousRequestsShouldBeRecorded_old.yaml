@@ -1,0 +1,11 @@
+---
+interactions:
+  - request:
+      uri: http://example.org
+      method: GET
+      body: ~
+    response:
+      code: 200
+      body:
+        string: test
+...

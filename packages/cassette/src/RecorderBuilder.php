@@ -110,6 +110,48 @@ class RecorderBuilder {
 		return $recorder;
 	}
 
+	/**
+	 * @param string $test
+	 * @param Request[] $requests
+	 *
+	 * @return void
+	 *
+	 */
+	public function save(string $test, array $requests) {
+		$filename = $this->get_filename($test);
+		$content = [];
+
+		if(0 == count($requests)) {
+			return;
+		}
+
+		foreach ($requests as $request) {
+			foreach ($request->get_responses() as $response) {
+				$content['interactions'][] = [
+					'request' => [
+						'uri' => $request->get_url(),
+						'method' => $request->get_method(),
+						'body' => null
+					],
+					'response' => [
+						'code' => $response->get_status(),
+						'body' => [
+							'string' => $response->get_body()
+						]
+					]
+				];
+			}
+		}
+
+		$folder = dirname($filename);
+
+		if(! is_dir($folder)) {
+			mkdir($folder, 0777, true);
+		}
+
+		yaml_emit_file($filename, $content);
+	}
+
     protected function get_filename(string $test): string
     {
         if( ! preg_match('/(?<class>[^ ]+)( with data set "(?<dataset>[^"]+)")?/', $test, $matches) ) {
